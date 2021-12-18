@@ -1,0 +1,150 @@
+/*Most easy/basic changes can be done up here in the root area, edit the rest if you know what it does.*/
+:root{
+--stripebackground:#e2c8d4;         /*The color of the small stripe just under the header*/
+--windowbackground: #d0a4af;        /*The color of the background of the main window main area.*/
+--maintextcolor:#000;               /*The color of the text in the main area.*/
+--headercolor:#fff;                 /*The color of the text in the header/title.*/
+--linktextcolor:var(--maintextcolor); /*This line means that the links will have the same color as the normal text in the main area of the window. Change if you want different colors.*/
+--backgroundImageUrl:url("resources/images/background.jpg");  /*The URL to the image you want to use as background.*/
+--focusImageUrl:url("resources/images/wave.png");   /*The URL to the image you want to use for the foreground.*/
+--backgroundBlur:blur(2px);                           /*Change how blurry the background is. Higher number is more blurry.*/
+--backgroundBorder:#000;                           /*If you have a blurry background, set the color of the border around the image to fit it here.*/
+--letterSpace:2px;                                    /*Define how far letters are spaced from each other in pixels.*/
+/* The font style doesn't seem to work as variable defined here. If you want to change the font, scroll to the bottom of the document to change the path.*/
+
+/* These are the font sizes for every element with text respectively:*/
+--windowtitlefontsize:17px;           /*Font size used by the window title and clock*/
+--windowsubtitlefontsize:17px;        /*Font size used by the subtitle*/
+--categorytitlefontsize:25px;         /*Font size used by the category titles*/
+--categorycontentfontsize:15px;       /*Font size used by the category contents*/
+}
+/*Everything below here (maybe except the font) is normal css and far more likely to break things if you edit it.*/
+
+.bg-image {
+    background-image: var(--backgroundImageUrl);
+    filter: var(--backgroundBlur);
+    -webkit-filter: var(--backgroundBlur);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.window-bg {
+    background-image: url("resources/images/window.png");
+    height: 485px;
+    width: 960px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#clock{
+  text-align: right;
+  position: relative;
+  top: 3px;
+  right: 5px;
+}
+.centerDivs{
+  display: table;
+  top:0px;
+  left:0px;
+  height: 100%;
+  width: 100%;
+}
+.front-img{
+  position: inherit;
+  width: 339px;
+  height: 446px;
+  left:5px;
+  top:34px;
+  background-image:var(--focusImageUrl);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.titlediv{
+  font-size: var(--windowtitlefontsize);
+  position: inherit;
+  width: 949px;
+  height: 25px;
+  left:5px;
+  top:5px;
+  color: var(--headercolor);
+}
+#titleb{
+  position:inherit;
+  top: 3px;
+  left:5px;
+}
+#Subtitle{
+  font-size: var(--windowsubtitlefontsize);
+  position: inherit;
+  top:5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: left;
+  width: 100%;
+}
+.windowbackgroundarea1{
+  position: inherit;
+  width: 606px;
+  height: 26px;
+  left:349px;
+  top:34px;
+  background-color: var(--stripebackground);
+}
+.windowbackgroundarea2{
+  position: inherit;
+  width: 606px;
+  height: 415px;
+  left:349px;
+  top:65px;
+  background-color:var(--windowbackground);
+}
+.category{
+  height:100%;
+  width: 100%;
+  display:table-cell;
+  vertical-align:middle;
+  position: relative;
+  top: -20px; /*This is a bit hacky, but since each title has a top margin of 20px, the whole text is misaligned by 20px downwards. This compensates for that.*/
+}
+.categorytitle{
+  font-size: var(--categorytitlefontsize);
+  font-weight: normal;
+  width:605px;
+  text-align: center;
+  position: relative;
+  margin-top: 20px;
+}
+.categorycontent{
+  font-size: var(--categorycontentfontsize);
+  width:605px;
+  position:relative;
+  text-align: center;
+  font-weight: lighter;
+  margin-top: 5px;
+}
+a{
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  text-decoration: none;
+  color:var(--linktextcolor)
+}
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: w95;
+    color:var(--maintextcolor);
+    position: center;
+    letter-spacing:var(--letterSpace);
+    background: var(--backgroundBorder);
+}
+  @font-face {
+    font-family: "w95";
+    src: url('resources/style/w95fa.woff');
+}

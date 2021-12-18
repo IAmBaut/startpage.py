@@ -1,0 +1,24 @@
+Music
+Youtube | https://music.youtube.com/
+AudioLibrary | 
+Radio | 
+
+Dev
+Gitlab | https://gitlab.com
+Github | https://github.com
+
+Sources
+Photo1 | https://pixabay.com/photos/blossom-pink-garden-nature-4151081/
+Font | https://fontsarena.com/w95fa-by-fontsarena/
+Photo2 | https://pixabay.com/illustrations/picture-woodblock-printing-woodcut-1247354/
+Images | https://pixabay.com/
+
+Private
+Email |  
+Homeserver | 
+Email2 | 
+Photos | 
+Music projects | 
+CAD files | 
+Todo list | 
+Food | 

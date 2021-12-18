@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>Startpage</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="main.css">
+<style>
+</style>
+
+<body>
+    <div class="bg-image"></div>
+    <div class="window-bg">
+        <div class="front-img"></div>
+        <div class="titlediv">
+            <div id=titleb>Startpage template...</div>
+            <div id="clock"></div>
+        </div>
+        <div class="windowbackgroundarea1"><div id="Subtitle">Have a nice day.</div></div>
+        <div class="windowbackgroundarea2">
+        <div class="centerDivs">
+            <div class="category">
+                <div class="categorytitle">Music</div>
+                <div class="categorycontent"><a href="https://music.youtube.com/">Youtube</a> - <a href="">AudioLibrary</a> - <a href="">Radio</a></div>
+                <div class="categorytitle">Dev</div>
+                <div class="categorycontent"><a href="https://gitlab.com">Gitlab</a> - <a href="https://github.com">Github</a></div>
+                <div class="categorytitle">Sources</div>
+                <div class="categorycontent"><a href="https://pixabay.com/photos/blossom-pink-garden-nature-4151081/">Photo1</a> - <a href="https://fontsarena.com/w95fa-by-fontsarena/">Font</a> - <a href="https://pixabay.com/illustrations/picture-woodblock-printing-woodcut-1247354/">Photo2</a> - <a href="https://pixabay.com/">Images</a></div>
+                <div class="categorytitle">Private</div>
+                <div class="categorycontent"><a href=" ">Email</a> - <a href="">Homeserver</a> - <a href="">Email2</a> - <a href="">Photos</a></div><div class="categorycontent"><a href="">Music projects</a> - <a href="">CAD files</a> - <a href="">Todo list</a> - <a href="">Food</a></div>
+            </div>
+        </div>
+        </div>
+    </div> 
+    <script>
+        var clock=document.getElementById("clock");
+        function updateClock(){
+            var date=new Date();
+            date.setHours(date.getHours()+1)
+            var hours = "16";
+            var minutes = "30";
+            var seconds = "15";
+            if (hours.length==1){
+                hours="0"+hours
+            }
+            if (minutes.length==1){
+                minutes="0"+minutes
+            }
+            if (seconds.length==1){
+                seconds="0"+seconds
+            }
+            clock.innerHTML=hours+":"+minutes+":"+seconds;
+        }
+        updateClock();
+        setInterval(updateClock,1000);
+    </script>
+    </body>
+    </html>
