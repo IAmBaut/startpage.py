@@ -33,9 +33,6 @@ def makeDoc(data):
 <title>'''+TabTitle+'''</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="main.css">
-<style>
-</style>
-
 <body>
     <div class="bg-image"></div>
     <div class="window-bg">
@@ -69,7 +66,9 @@ def makeDoc(data):
         page+='''            </div>
         </div>
         </div>
-    </div> 
+    </div>
+    <div class="pixeloverlay"></div>
+    <div class="vignette"></div>
     <script>
         var clock=document.getElementById("clock");
         function updateClock(){

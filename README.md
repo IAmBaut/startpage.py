@@ -2,6 +2,12 @@
 
 A small script to generate a startpage written in Python. 
 
+## Preview with filters
+![Screenshot with filters enabled](https://gitlab.com/Baut/readme-images/-/raw/master/StandaloneImages/Startpage%20with%20overlays.png)
+
+The sizes of the pixels are rendered fitting to the display resolution the final startpage is displayed at. Since this preview is just a downscaled screenshot some of it won't display correctly here.
+
+## Preview without filters (except background blur): 
 ![Screenshot of default startpage](https://gitlab.com/Baut/readme-images/-/raw/master/StandaloneImages/Startpage.png)
 
 # Index
@@ -9,6 +15,7 @@ A small script to generate a startpage written in Python.
  * [Requirements](#requirements)
  * [How to generate a startpage with this script](#how-to-generate-a-startpage-with-this-script)
  * [The `hourOffset` variable](#the-houroffset-variable)
+ * [Effect overlays](#effect-overlays)
  * [Known issues/warnings](#known-issueswarnings)
  * [Asset sources](#asset-sources)
 
@@ -34,6 +41,7 @@ Using the software of your choice decompress this archive if you did not clone t
 * `main.css` - For changing colors, images, effects and fonts.
     * All values in the root{} area are optional to change. To load other images change the image URLS in this section or replace the files (with the same name as the old file).
     * The variables in the root{} area have comments next to them with a short explanation what they do.
+    * You can also activate or deactivate overlay effects like the blur, crt pixel effect and vignette from this root{} area.
     * If you want to change the font used, scroll to the bottom of the file and change the path to the font file.
 * `content.txt` - For changing the actual content of the startpage.
     * This is where you change the actual content of the window of the startpage. The format is simple: 
@@ -57,6 +65,14 @@ That's all.
 The `startpage.py` file has a `hourOffset` variable that you can change. This variable should be changed if the clock is displaying the wrong time for you. 
 
 Normally the clock should be accurate, but some browser configurations can create issues - for example if you run Firefox and have `privacy.resistFingerprinting` set to true, the timezone that the clock is displated in can be wrong since the browser refuses to tell the script the timezone you are in. This offset is a blanket solution to adjust the time if you run into any such issues without requiring you to change your browser settings or compromising your security. Just change the value and regenerate the startpage.
+
+# Effect overlays
+
+Currently there are 3 effect overlays that you can turn off or on for the startpage: a background blur, a "crt pixel" effect and a vignette overlay. These can be adjusted and toggled on/off in the `main.css` file. Explanations for them are in the comments to every setting. 
+
+That being said the "crt pixel" effect might profit from explanation. It is an overlay that repeats every 3 pixels in each direction: Horizontally every 3 pixel group is overlayed with the colors that the RGB cells of a crt used to have. Vertically every third pixel is darkened to simulate "gaps" between the cells. This means the effect suggests that every 3*3=9 pixel group is 1 crt pixel. It is simply a overlay though, so alignment is not taken into account and the real image is still below in default resolution.
+
+The `--pixeloverlay-resolution` is a multiplier that defines how big each cell is, at 1 it is a 3\*3 cell, at 2 it's a 6\*6 cell, etc. Floating point numbers (1.5 etc.) can be used, but will most likely cause [moiré patterns](https://en.wikipedia.org/wiki/Moir%C3%A9_pattern). Feel free to experiment with these settings, but if you want to avoid these patterns it is probably a good idea to stick to multipliers that result in whole numbers. In contrast the `--pixeloverlay-itensity` setting just defines the opacity of the overlay. 
 
 # Known issues/warnings
 

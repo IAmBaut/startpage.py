@@ -4,9 +4,6 @@
 <title>Startpage</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="stylesheet" href="main.css">
-<style>
-</style>
-
 <body>
     <div class="bg-image"></div>
     <div class="window-bg">
@@ -30,15 +27,17 @@
             </div>
         </div>
         </div>
-    </div> 
+    </div>
+    <div class="pixeloverlay"></div>
+    <div class="vignette"></div>
     <script>
         var clock=document.getElementById("clock");
         function updateClock(){
             var date=new Date();
-            date.setHours(date.getHours()+1)
-            var hours = "16";
-            var minutes = "30";
-            var seconds = "15";
+            date.setHours(date.getHours()+0)
+            var hours = date.getHours().toString();
+            var minutes = date.getMinutes().toString();
+            var seconds = date.getSeconds().toString();
             if (hours.length==1){
                 hours="0"+hours
             }
