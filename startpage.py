@@ -1,3 +1,4 @@
+import re
 """
 The variables that you are meant to change are those that are defined in the first block here before the function definitions.
 Note that this is just plaintext that gets inserted into the string below. It's not elegant, but it works. 
@@ -22,6 +23,7 @@ def parseContents(contents):
         contents=contents[1:]
     while contents[-1]=='\n':
         contents=contents[:-1]
+    contents=re.sub('\n{3,}','\n\n',contents)
     contents=contents.split('\n\n')
     return [x.split('\n') for x in contents]
     
