@@ -1,6 +1,6 @@
 # Startpage
 
-A small script to generate a startpage written in Python. 
+A small script to generate a startpage written in Python.
 
 ## Preview with filters
 ![Screenshot with filters enabled](https://gitlab.com/Baut/readme-images/-/raw/master/StandaloneImages/Startpage%20with%20overlays.png)
@@ -103,6 +103,10 @@ As of now there are two ways to avoid it:
 The licences of the external assets do not require attribution, but in case you were wondering where they were from I decided to link the sources here anyways.
 
 These assets are only used for the default look of the startpage and can be replaced at will.
+
+## Inspiration
+
+The original default appearance of this startpage is inspired by a startpage by [jamesNWT](https://github.com/jamesNWT). 
 
 ## Images
 
